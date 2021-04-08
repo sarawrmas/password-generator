@@ -1,4 +1,8 @@
-// Assignment code here
+var howLong = window.prompt("Choose a password length between 8 and 128 characters:");
+var lower = window.confirm("Would you like your password to contain lowercase letters?");
+var upper = window.confirm("Would you like your password to contain uppercase letters?");
+var nums = window.confirm("Would you like your password to contain numbers?");
+var special = window.confirm("Would you like your password to contain special characters?");
 
 
 // Get references to the #generate element
