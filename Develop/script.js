@@ -1,36 +1,41 @@
 var characters = 'abcdefghijklmnopqrstuvwxyz' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + '0123456789' + '.,!@#$%^&*?';
 
-var length = window.prompt("Choose a password length between 8 and 128 characters:");
-
-var lower = window.confirm("Would you like your password to contain lowercase letters?");
-var upper = window.confirm("Would you like your password to contain uppercase letters?");
-var nums = window.confirm("Would you like your password to contain numbers?");
-var special = window.confirm("Would you like your password to contain special characters?");
-
-function whichChars() {
-  if (lower === true) {
-    console.log("confirm lowercase");
-  } else {
-    characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + '0123456789' + '.,!@#$%^&*?';
-    if (upper === true) {
-    console.log("confirm uppercase");
-    } else {
-      characters = '0123456789' + '.,!@#$%^&*?';
-      if (nums === true) {
-        console.log("confirm numbers");
-      } else {
-        characters = '.,!@#$%^&*?';
-        if (special === true) {
-          console.log("confirm special characters");
-        } else {
-          alert("Your password must contain characters!");
-        }
-      }
+function prompts() {
+  var characters = 'abcdefghijklmnopqrstuvwxyz' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + '0123456789' + '.,!@#$%^&*?';
+  var length = window.prompt("Choose a password length between 8 and 128 characters:");
+    if (!length || length < 8) {
+      alert("Please pick a number between 8 and 128");
+      return prompts();
     }
-  }
+  var lower = window.confirm("Would you like your password to contain lowercase letters?");
+    if (lower === true) {
+      console.log("Confirm lowercase");
+    } else {
+      console.log("Deny lowercase");
+    }
+  var upper = window.confirm("Would you like your password to contain uppercase letters?");
+    if (upper === true) {
+      console.log("Confirm uppercase");
+    } else {
+      console.log("Deny uppercase");
+    }
+  var nums = window.confirm("Would you like your password to contain numbers?");
+    if (nums === true) {
+      console.log("Confirm numbers");
+    } else {
+      console.log("Deny numbers");
+    }
+  var special = window.confirm("Would you like your password to contain special characters?");
+    if (special === true) {
+      console.log("Confirm special characters");
+    } else {
+      console.log("Deny special characters");
+    }
 }
 
-function generatePassword() {
+prompts();
+
+function generatePassword(whichChars) {
   // var characters = whichChars();
   var result = [];
   for (var i = 0; i < length; i++ ) {
@@ -48,14 +53,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-console.log(generatePassword(length));
+console.log(generatePassword());
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// series of prompts for password criteria
-// length of at least 8 characters and no more than 128 characters
-// lowercase, uppercase, numeric, and/or special characters
-// at least one character type should be selected
-// a password is generated that matches the selected criteria
-// password is displayed to the page
