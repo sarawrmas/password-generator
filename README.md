@@ -1,7 +1,7 @@
 # Password Generator
 
 ## Purpose
-This website generates a random password based on user criteria. After the user selects their preferred criteria using prompts and clicks the Generate button, a random password appears in the textbox. User may continue clicking until they are satisfied with their resulting password.
+This website generates a random password based on user criteria. After the user selects their preferred criteria using prompts and clicks the Generate button, a random password appears in the textbox. User may continue clicking until they are satisfied with their resulting password. Criteria includes:
 * A length that must be at least 8 characters long and no more than 128 characters
 * Lowercase letters
 * Uppercase letters
