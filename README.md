@@ -17,7 +17,7 @@ This website generates a random password based on user criteria. After the user 
 https://sarawrmas.github.io/password-generator/
 
 ## Preview
-!["screenshot of the webpage"](images/screenshot.png?raw=true) 
+!["screenshot of the webpage"](assets/images/screenshot.png?raw=true) 
 
 ## Contribution
 Made with ❤️ by Sara Adamski.
