@@ -53,6 +53,7 @@ function generatePassword() {
     randomPassword += characters.substring(rnum, rnum+1);
   }
   return randomPassword;
+  console.log(randomPassword);
 }
 
 // Get references to the #generate element
