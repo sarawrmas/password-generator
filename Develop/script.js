@@ -7,9 +7,15 @@ function lengthConfirm() {
   return length;
 }
 
+function confirmCharType() {
+  if (askLower === false && askUpper === false && askNums === false && askSpecial === false) {
+    alert("Password failed. Restart page and select at least one criteria.");
+    generate = false;
+  }
+}
+
 var length = lengthConfirm();
 
-// TO DO: reload if doesn't meet criteria
 var askLower = window.confirm("Would you like your password to contain lowercase letters?");
   if(askLower === true) {
     var confirmLower ='abcdefghijklmnopqrstuvwxyz';
@@ -35,15 +41,9 @@ var askSpecial = window.confirm("Would you like your password to contain special
   var confirmSpecial = '';
 }
 
+confirmCharType();
+
 var generate = window.alert("Criteria set. Please press Generate button to get your password!");
-
-// TO DO: generate password using criteria
-
-var characters =
-  'abcdefghijklmnopqrstuvwxyz' + 
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
-  '0123456789' +
-  '.,!@#$%^&*?';
 
 function generatePassword() {
   var characters = (confirmLower + confirmUpper + confirmNums + confirmSpecial);
